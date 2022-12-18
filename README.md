@@ -1,66 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## О проекте
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Данный проект является реализованным шаблоном сервиса по тестированию
 
-## About Laravel
+## Описание
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Веб-приложение отражает в себе сервис по тестированию студентов. В качестве базы данных был использован MySQL. Приложение было разработано с использованием контейнеризатора Docker. В качестве веб-сервера был использован apache.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+У неаутентифицированного пользователя нет доступа ни к одной из страниц приложения за исключением регистрации и авторизации. На этапе регистрации пользователь должен указать почту, пароль, уникальный шифр, а также полное имя. Кроме того, пользователь может на странице регистрации, или авторизации указать флажок запоминания данных для автологина.
+В приложении реализовано 3 роли пользователей.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Администратор
 
-## Learning Laravel
+Администратор может создавать дисциплины, редактировать их и удалять. Внутри созданной дисциплины администратор имеет возможность создавать тесты, с указанием названия, порядкового номера, времени на прохождение, минимального проходного балла. Также администратор может изменять и удалять тесты. Помимо этого администратор может внутри тестов создавать, изменять и удалять вопросы и ответы к ним.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Преподаватель
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Преподаватель может точно также взаимодействовать с тестами и вопросами в пределах подписанных дисциплин.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Студент
 
-## Laravel Sponsors
+Студент может подписаться на любую доступную дисциплину. При этом ему откроется для прохождения только первый тест. Далее, студент может начать прохождение доступных тестов. В прохождение входят ответы на поставленные вопросы. Ответ может быть как один, так и несколько, это отражено в интерфейсе. Ответы принимаются лишь до завершения времени выделенного на тест. Тест завершается либо в случае ответа на последний вопрос, либо если выделенное время истекло. После прохождения теста, подсчитывается итоговое количество баллов. В случае успешного прохождения теста, студенту открывается следующий тест. В случае провала теста, студент может пройти его повторно. Пользователь также может просмотреть результаты за все пройденные тесты
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+В проекте были использованы основные возможности экосистемы Laravel. В частности:
 
-### Premium Partners
+- [Шаблонизатор Blade](https://laravel.com/docs/9.x/blade)
+- [Eloquent ORM](https://laravel.com/docs/9.x/eloquent)
+- [Artisan console](https://laravel.com/docs/9.x/artisan#main-content)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Документация
 
-## Contributing
+Все основные манипуляции были тщательно задокументированы, их описания можно найти непосредственно в каждом разделе.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Содержание
 
-## Code of Conduct
++ ~~[Docker]~~
++ ~~[Работа с БД]~~
++ ~~[Модели]~~
++ ~~[Контроллеры]~~
++ ~~[Пути(Routing)]()~~
++ ~~[View. Шаблоны Blade]()~~
++ ~~[Middleware]()~~
++ ~~[Providers+Composers]()~~
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Авторские права
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Данный проект является открытым и свободно распространяемым. Создателем всего кода является Гегия Давит, или же [@DavidaaWoW](https://github.com/DavidaaWoW)
